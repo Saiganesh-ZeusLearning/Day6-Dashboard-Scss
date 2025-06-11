@@ -1,0 +1,24 @@
+.footer {
+    height: 40px;
+    width: 100%;
+    font-family: "Quicksand-medium";
+    background-color: #E0E1E1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    
+    @media screen and (max-width: 960px) {
+        position: relative;
+    }
+}
+
+.footer-text {
+    color: $light-text-3;
+    font-size: 12px;
+
+    span {
+        font-family: "Quicksand-bold";
+    }
+}

@@ -1,0 +1,35 @@
+.flex-sort-courses {
+    display: flex;
+    justify-content: center;
+
+    .show-courses-sortby {
+        color: #686868;
+        display: flex;
+        position: relative;
+        font-family: "Quicksand-medium";
+        margin-top: 40px;
+        width: 96%;
+        font-size: 12px;
+        padding-bottom: 14px;
+        border-bottom: solid 1px #DBDBDB;
+
+        .sortby {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: absolute;
+            right: 20px;
+            top: -10px;
+            
+            .sort-selecter {
+                border: none;
+                background-color: inherit;
+                margin-right: 10px;
+                width: 150px;
+                font-size: 14px;
+                border-bottom: solid 1px #D5D5D5;
+                color: #333333;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.courses-classes {
+    background-color: #8DDC97;
+    display: flex;
+    width: 97%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+    .courses {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        width: 50%;
+        gap: 10px;
+        padding: 10px 0px;
+        border-bottom: solid 3px $text-1;
+    }
+
+    .classes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        width: 50%;
+        gap: 10px;
+        padding: 10px 0px;
+    }
+}
+
+.course-count {
+    font-family: "Quicksand-bold";
+    font-size: 20px;
+    color: $text-1;
+}
+
+.course-text {
+    font-family: "Quicksand-medium";
+    color: $text-1;
+}

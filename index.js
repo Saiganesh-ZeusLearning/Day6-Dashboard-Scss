@@ -88,35 +88,113 @@
 const hamburgerBtn = document.querySelector(".hamburger-btn");
 const hamburgerList = document.querySelector(".hamburger-items")
 
-// hamburgerBtn.addEventListener("mouseover", function (e) {
-//     hamburgerList.style.display = 'flex';
-// });
+hamburgerBtn.addEventListener("mouseover", function (e) {
+    hamburgerList.classList.remove("hamburger-items-hide");
+    hamburgerBtn.style.filter = "brightness(0) invert(1)";
+});
 
+hamburgerBtn.addEventListener("mouseout", function (e) {
+    hamburgerList.classList.add("hamburger-items-hide")
+    hamburgerBtn.style.filter = "none";
+});
 
-// hamburgerBtn.addEventListener("mouseout", function (e) {
-//     hamburgerList.style.display = 'none';
-// });
+hamburgerList.addEventListener("mouseover", function (e) {
+    hamburgerList.classList.remove("hamburger-items-hide")
+    hamburgerBtn.style.filter = "brightness(0) invert(1)";
+});
 
-// hamburgerList.addEventListener("mouseout", function (e) {
-//     hamburgerList.style.display = 'none';
-// });
-
-// hamburgerList.addEventListener("mouseover", function (e) {
-//     hamburgerList.style.display = 'flex';
-// });
+hamburgerList.addEventListener("mouseout", function (e) {
+    hamburgerList.classList.add("hamburger-items-hide")
+    hamburgerBtn.style.filter = "none";
+});
 
 const ham_content = document.querySelector(".hamburger-content");
+const ham_content_subitems = document.querySelector(".hamburger-sub-item-content");
+const ham_content_arrow = document.querySelector(".content-arrow");
 
 ham_content.addEventListener("click", () => {
-    console.log("clicked")
+    if (ham_content_subitems.classList.contains("hamburger-sub-item-hide")) {
+        ham_content_subitems.classList.remove("hamburger-sub-item-hide");
+        ham_content_subitems.classList.add("hamburger-sub-item-show");
+        ham_content_arrow.style.transform = 'rotate(180deg)'
+    } else {
+        ham_content_subitems.classList.add("hamburger-sub-item-hide");
+        ham_content_subitems.classList.remove("hamburger-sub-item-show");
+        ham_content_arrow.style.transform = 'rotate(0deg)'
+
+    }
+})
+const ham_users = document.querySelector(".hamburger-users");
+const ham_users_subitems = document.querySelectorAll(".hamburger-sub-item-users");
+const ham_users_arrow = document.querySelector(".users-arrow");
+
+
+ham_users.addEventListener("click", () => {
+    if (ham_users_subitems[0].classList.contains("hamburger-sub-item-hide")) {
+        ham_users_subitems.forEach(element => {
+            element.classList.remove("hamburger-sub-item-hide");
+            element.classList.add("hamburger-sub-item-show");
+        })
+        ham_users_arrow.style.transform = 'rotate(180deg)'
+    } else {
+        ham_users_subitems.forEach(element => {
+            element.classList.add("hamburger-sub-item-hide");
+            element.classList.remove("hamburger-sub-item-show");
+        })
+        ham_users_arrow.style.transform = 'rotate(0deg)'
+    }
+})
+
+
+const ham_reports = document.querySelector(".hamburger-reports");
+const ham_reports_subitems = document.querySelectorAll(".hamburger-sub-item-reports");
+const ham_reports_arrow = document.querySelector(".reports-arrow");
+
+
+ham_reports.addEventListener("click", () => {
+    if (ham_reports_subitems[0].classList.contains("hamburger-sub-item-hide")) {
+        ham_reports_subitems.forEach(element => {
+            element.classList.remove("hamburger-sub-item-hide");
+            element.classList.add("hamburger-sub-item-show");
+        })
+        ham_reports_arrow.style.transform = 'rotate(180deg)'
+    } else {
+        ham_reports_subitems.forEach(element => {
+            element.classList.add("hamburger-sub-item-hide");
+            element.classList.remove("hamburger-sub-item-show");
+        })
+        ham_reports_arrow.style.transform = 'rotate(0deg)'
+    }
+})
+
+
+const ham_admin = document.querySelector(".hamburger-admin");
+const ham_admin_subitems = document.querySelectorAll(".hamburger-sub-item-admin");
+const ham_admin_arrow = document.querySelector(".admin-arrow");
+
+
+ham_admin.addEventListener("click", () => {
+    if (ham_admin_subitems[0].classList.contains("hamburger-sub-item-hide")) {
+        ham_admin_subitems.forEach(element => {
+            element.classList.remove("hamburger-sub-item-hide");
+            element.classList.add("hamburger-sub-item-show");
+        })
+        ham_admin_arrow.style.transform = 'rotate(180deg)'
+    } else {
+        ham_admin_subitems.forEach(element => {
+            element.classList.add("hamburger-sub-item-hide");
+            element.classList.remove("hamburger-sub-item-show");
+        })
+        ham_admin_arrow.style.transform = 'rotate(0deg)'
+    }
 })
 
 
 
 // function AddSubject({
-    //     img_src,
-    //     card_heading,
-    //     fav_icon,
+//     img_src,
+//     card_heading,
+//     fav_icon,
 //     subject,
 //     grade,
 //     grade_upto,
@@ -161,11 +239,11 @@ ham_content.addEventListener("click", () => {
 //                                     ${units ? `<div>
 //                                         <span>${units}</span> Units
 //                                     </div>` : ``}
-                                    
+
 //                                     ${lessons ? `<div>
 //                                         <span>${lessons}</span> Lessons
 //                                     </div>` : ``}
-                                    
+
 //                                     ${topics ? `<div>
 //                                         <span>${topics}</span> Topics
 //                                     </div>` : ``}
@@ -209,9 +287,9 @@ ham_content.addEventListener("click", () => {
 
 
 const subject_1 = {
-    img_src : "imageMask.png",
-    card_heading : "Acceleration",
-    fav_icon : true,
+    img_src: "imageMask.png",
+    card_heading: "Acceleration",
+    fav_icon: true,
     subject: "Physics",
     grade: "Grade 7",
     grade_upto: "+2",
@@ -293,7 +371,7 @@ const grid = document.querySelector(".grid");
 
 const cards = [subject_1, subject_2, subject_3, subject_4];
 
-cards.map( ({    img_src,
+cards.map(({ img_src,
     card_heading,
     fav_icon,
     subject,
@@ -310,7 +388,7 @@ cards.map( ({    img_src,
     manage_course,
     grade_submission,
     reports,
-    expired,}) => {
+    expired, }) => {
     const div = document.createElement("div");
     div.classList.add("card")
     div.innerHTML = `

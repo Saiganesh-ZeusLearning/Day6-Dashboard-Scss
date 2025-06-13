@@ -103,8 +103,10 @@ const announcements = document.querySelector(".header-alert")
 const announcements_wrapper = document.querySelector(".announcements-wrapper")
 
 announcements.addEventListener("mouseover",() => {
-    announcements_wrapper.classList.toggle("announcements-wrapper-show")
+    announcements_wrapper.classList.toggle("announcements-wrapper-show");
+    announcements_wrapper.classList.toggle("announcements-wrapper-hide")
 })
 announcements.addEventListener("mouseout",() => {
+    announcements_wrapper.classList.toggle("announcements-wrapper-show");
     announcements_wrapper.classList.toggle("announcements-wrapper-hide")
 })

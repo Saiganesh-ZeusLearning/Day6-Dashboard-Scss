@@ -99,14 +99,21 @@ addAnnouncement(announcements_3);
 addAnnouncement(announcements_4);
 addAnnouncement(announcements_3);
 
-const announcements = document.querySelector(".header-alert")
-const announcements_wrapper = document.querySelector(".announcements-wrapper")
+const announcements = document.querySelector(".header-announcements");
+const announcements_wrapper = document.querySelector(".announcements-wrapper");
+const announcements_img = document.querySelector(".header-announcements-img"); 
+const announcements_count = document.querySelector(".announcements-count"); 
 
 announcements.addEventListener("mouseover",() => {
     announcements_wrapper.classList.toggle("announcements-wrapper-show");
-    announcements_wrapper.classList.toggle("announcements-wrapper-hide")
+    announcements_wrapper.classList.toggle("announcements-wrapper-hide");
+    announcements_img.style.filter = "brightness(0) invert(1)";
+    announcements_count.style.display = "none";
 })
 announcements.addEventListener("mouseout",() => {
     announcements_wrapper.classList.toggle("announcements-wrapper-show");
-    announcements_wrapper.classList.toggle("announcements-wrapper-hide")
+    announcements_wrapper.classList.toggle("announcements-wrapper-hide");
+    announcements_img.style.filter = "none";
+    announcements_count.style.display = "block";
 })
+

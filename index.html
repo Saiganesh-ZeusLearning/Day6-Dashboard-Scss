@@ -19,16 +19,22 @@
                 <div class="reports">REPORTS</div>
                 <div class="admin">ADMIN</div>
             </div>
-            <div class="header-icons">
-                <img src="icons/alerts.svg" alt="">
+            <div class="header-icons header-alerts">
+                <img src="icons/alerts.svg" alt=""  class="header-alert-img">
                 <span class="alert-count">2</span>
+                <div class="alerts-wrapper alerts-wrapper-hide">
+                    <div class="alerts-show">
+                    </div>
+                    <div class="alerts-btns">
+                        <button>SHOW ALL </button>
+                    </div>
+                </div>
             </div>
-            <div class="header-icons header-alert">
-                <img src="icons/announcements.svg" alt="">
-                <span class="alert-count">1</span>
+            <div class="header-announcements header-icons">
+                <img src="icons/announcements.svg" alt="" class="header-announcements-img">
+                <span class="announcements-count">1</span>
                 <div class="announcements-wrapper announcements-wrapper-hide">
                     <div class="announcements-show">
-
                     </div>
                     <div class="announcements-btns">
                         <button>SHOW ALL </button>
@@ -349,7 +355,9 @@
             rights reserverd.</div>
     </div>
     <script src="./index.js"></script>
+    <script src="./hamburger.js"></script>
     <script src="./announcements.js"></script>
+    <script src="./alerts.js"></script>
 </body>
 
 </html>

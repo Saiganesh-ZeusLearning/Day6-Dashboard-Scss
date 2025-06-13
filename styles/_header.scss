@@ -69,7 +69,7 @@
             cursor: pointer;
             box-sizing: border-box;
             padding: 12px 5px;
-            
+
 
 
             @media screen and (min-width: 960px) {
@@ -90,16 +90,33 @@
         .header-icons {
             position: relative;
         }
-
-        .header-alert{
+        .header-alerts{
+            padding: 10px;
+            position: relative;
+            transform: translateX(12px);
+            z-index: 2;
+        }
+        .alert-count {
+            position: absolute;
+            bottom: 25px;
+            left: 23px;
+            background-color: #2A7FF3;
+            color: white;
+            padding: 1px 6px;
+            box-sizing: border-box;
+            border-radius: 100%;
+            font-size: 12px;
+        }
+        
+        .header-announcements {
             padding: 10px;
             position: relative;
         }
 
-        .alert-count {
+        .announcements-count {
             position: absolute;
-            top: -4px;
-            left: 15px;
+            bottom: 23px;
+            left: 25px;
             background-color: #2A7FF3;
             color: white;
             padding: 1px 6px;
@@ -277,7 +294,7 @@
     transition: all 0.3s linear;
 }
 
-.announcements-show{
+.announcements-show {
     max-height: 510px;
     display: flex;
     height: fit-content;
@@ -292,13 +309,15 @@
     transition: all 0.3s linear;
     overflow-y: scroll;
 
-    .done{
+    .done {
         background-color: white;
     }
-    .not-done{
+
+    .not-done {
         background-color: #FFFFEE;
     }
-    .announcements-card{
+ 
+    .announcements-card {
         position: relative;
         padding-top: 5px;
         padding-bottom: 15px;
@@ -314,10 +333,12 @@
             align-items: center;
             border-radius: 100%;
             background-color: #1F7A54;
-            img{
+
+            img {
                 transform: translateX(-1px);
             }
         }
+
         .not-done-icon {
             position: absolute;
             height: 16px;
@@ -329,36 +350,41 @@
             align-items: center;
             border-radius: 100%;
             border: solid 1px #1F7A54;
-            div{
+
+            div {
                 transform: translateY(-0.5px);
                 font-size: 10px;
                 color: #1F7A54;
             }
         }
-        .announcements-heading{
+
+        .announcements-heading {
             display: flex;
             flex-direction: column;
             gap: 5px;
             padding: 5px 13px;
             padding-top: 10px;
             color: $text-1;
-            > div{
-                &:nth-child(1){
+
+            >div {
+                &:nth-child(1) {
                     font-size: 11px;
-                    span{
+
+                    span {
                         color: #6E6E6E;
                     }
                 }
             }
         }
 
-        .announcements-course{
+        .announcements-course {
             color: #6E6E6E;
             font-size: 12px;
             padding-left: 12px;
             margin-bottom: 5px;
         }
-        .announcements-attachments-date{
+
+        .announcements-attachments-date {
             display: flex;
             font-size: 12px;
             padding: 3px 0px;
@@ -366,7 +392,7 @@
             align-items: center;
             color: #6E6E6E;
 
-            div{
+            div {
                 display: flex;
                 align-items: center;
             }
@@ -374,7 +400,7 @@
     }
 }
 
-.announcements-btns{
+.announcements-btns {
     left: -260px;
     top: 546px;
     width: 300px;
@@ -385,7 +411,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    button{
+
+
+    button {
         color: #1F7A54;
         background-color: #FFFFFF;
         border: none;
@@ -393,23 +421,57 @@
     }
 }
 
-.announcements-wrapper{
+.announcements-wrapper {
     position: absolute;
     right: 0;
     box-shadow: 0px 13px 20px #0000003D;
     top: 50px;
 }
 
-.announcements-wrapper-hide{
+.announcements-wrapper-hide {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: all 0.3s linear;
 }
 
-.announcements-wrapper-show{
+.announcements-wrapper-show {
     height: fit-content;
     max-height: 600px;
     opacity: 1;
     transition: all 0.3s linear;
+}
+
+.alerts-heading{
+    padding-top: 5px;
+    color: #222222;
+    padding-left: 14px;
+    margin-bottom: 10px;
+    max-width: 250px
+}
+
+
+
+.alerts-wrapper{
+    @extend .announcements-wrapper;
+}
+
+.alerts-btns{
+    @extend .announcements-btns;
+}
+
+.alerts-show{
+    @extend .announcements-show;
+}
+
+.alerts-wrapper-show{
+    @extend .announcements-wrapper-show;
+}
+
+.alerts-wrapper-hide{
+    @extend .announcements-wrapper-hide;
+}
+
+.alerts-card{
+    @extend .announcements-card
 }

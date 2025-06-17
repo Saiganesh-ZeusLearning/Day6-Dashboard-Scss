@@ -10,7 +10,7 @@ function hideMenu(){
     hamburgerList.classList.add("hamburger-items-hide")
     hamburgerBtn.style.filter = "none";
 }
-
+  
 hamburgerBtn.addEventListener("mouseover", showMenu);
 hamburgerBtn.addEventListener("mouseout", hideMenu);
 hamburgerList.addEventListener("mouseover", showMenu);
